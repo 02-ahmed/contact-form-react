@@ -12,7 +12,9 @@ function App() {
   const [firstNameValid, setFirstNameValid] = useState(true);
   const [secondNameValid, setSecondNameValid] = useState(true);
   const [emailValid, setemailValid] = useState(true);
-  const [queryValid, setQueryValid] = useState(false);
+
+  const [queryValid, setQueryValid] = useState(true);
+
   const [messageValid, setMessageValid] = useState(true);
   const [consentValid, setConsentValid] = useState(true);
 
@@ -34,8 +36,6 @@ function App() {
     }
   }
 
- 
-
   const handleMessage = (event:React.ChangeEvent<HTMLTextAreaElement>) => {
     if (event.target.value.length> 0){
       setMessageValid(false)
@@ -51,7 +51,6 @@ function App() {
   }
 
 
-
   const handleClick = () => {
 
     setCanSubmit(!canSubmit)
@@ -61,6 +60,8 @@ function App() {
     if (isChecked === false ){
       setIsChecked2(false)
       setIsChecked(true)
+      setQueryValid(false)
+      
     }else{
       setIsChecked(false)
     }
@@ -69,13 +70,14 @@ function App() {
     if (isChecked2 === false){
       setIsChecked(false)
       setIsChecked2(true)
+      setQueryValid(false)
     }else{
       setIsChecked2(false)
     }
   }
 
   const handleQuery = () => {
-    if (isChecked === true || isChecked2 === true){
+    if (isChecked === false || isChecked2 === false){
       setQueryValid(false)
     }
   }
@@ -101,7 +103,6 @@ function App() {
       consentClass={`invalid-feedback ${consentValid ? 'show':'' }`}
       handleConsent = {handleConsent}
       >
-
         <Button onClick={handleClick} ></Button>
       </ContactForm>
     </>
