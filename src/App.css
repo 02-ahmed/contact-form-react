@@ -11,10 +11,40 @@ body {
 
 .container {
   background-color: white;
-  width: 800px;
-  height: 500px;
+  width: 700px;
+  /* height: 500px; */
   margin-top: 50px;
   border-radius: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 
+.textarea {
+  height: 120px;
+}
+
+.query {
+  margin-bottom: -10px;
+}
+
+.query-type {
+  border: 1px solid grey;
+  margin-right: 20px;
+  border-radius: 10px;
+  height: 35px;
+  align-items: center;
+  justify-content: left;
+  padding-left: 20px;
+  display: flex;
+  max-width: 320px;
+}
+
+.query-type:active {
+  border-color: green;
+}
+
+
+.show {
+  display: block;
+}

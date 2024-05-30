@@ -1,12 +1,13 @@
 interface Props {
-  text: string;
   onClick: () => void
 }
 
-const Button = ({text, onClick}: Props) => {
+const Button = ({onClick}: Props) => {
   return (
     <>
-      <button type="button" className="btn btn-success" onClick={onClick}>{text}</button>
+          <div className="col-12">
+            <button className="btn btn-success col-12" type="button" onClick={onClick}>Submit</button>
+          </div>
     </>
   )
 }
